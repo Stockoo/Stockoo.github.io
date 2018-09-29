@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>STOCKOO - 머신러닝을 이용한 주가 예측</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+    .ng {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">주가예측_Stockoo</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="design.html">Model</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Result</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="mlp.html">MLP</a>
+                            <a class="dropdown-item" href="cnn.html">CNN</a>
+                            <a class="dropdown-item" href="rnn.html">RNN</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="ensemble.html">ENSEMBLE</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/graph.JPG')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Data Processing</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-14 col-md-16 mx-auto">
+                <div class="ng">
+                    <h1 class="section-heading">기업, 기간 </h1>
+                    <P></P>
+                    <img class="img-fluid" src="img/data/data.PNG" alt="">
+                    <br>
+                    <br>
+                    <hr>
+                    <h1 class="section-heading">데이터 전처리</h1>
+                    <p>기술적 지표 주식분석에 있어 기존 시가, 종가, 상한가, 하한가, 거래량 데이터를 기술적 지표로 변환해 사용 한다. </p>
+                    <P>우리가 사용한 오픈소스 라이브러리인 TA-Lib는 주식 차트의 기술적 분석을 위한 200여 가 지의 지표 함수를 제공하는 라이브러리로, python 패키지도 존재한다. 이 패키지를 이용하여 주식데이터에 대한 기술적 지표 데이터를 생성하고, 각 모델에 맞는 지표를 찾아 사용한다. </p>
+                    <p>모델에 이용하는 기술적 지표 데이터는 다음과 같다. </p>
+                    <br><br>
+                    <h3 class="w3-text-teal w3-container">Bollinger Band</h3>
+                    <img src="img/data/bolinger.png" width=700 height=300>
+                    <p> 이전 거래량과 현재의 거래량의 상대적 차이를 이용해 상승 하락을 판별하는 지표 </p>
+                    <h3 class="w3-text-teal w3-container">MACD</h3>
+                    <img src="img/data/macd.png" width=400 height=300>
+                    <p> 단기 지수 이동 평균과 장기 지수 이동 평균을 이용해 움직임을 판별하는 지표</p>
+                    <h3 class="w3-text-teal w3-container">DMI</h3>
+                    <img src="img/data/dmi.png" width=400 height=300>
+                    <p> 주가의 움직임의 추세를 읽고 강도를 측정하는데 사용되는 지표</p>
+                    <h3 class="w3-text-teal w3-container">CCI</h3>
+                    <img src="img/data/cci.png" width=400 height=300>
+                    <p> 이동 평균으로, CCI가 상승이면 양의 방향, 하락이면 음의 방향으로 진행</p>
+                    <h3 class="w3-text-teal w3-container">SMA</h3>
+                    <img src="img/data/sma.png" width=400 height=300>
+                    <p> 순차적으로 평균을 구하는 것</p>
+                    <h3 class="w3-text-teal w3-container">WMA</h3>
+                    <img src="img/data/wma.png" width=400 height=300>
+                    <p> 평균 값을 계산할 때 최근 데이터에 가중치를 부여하는 지표</p>
+                    <h3 class="w3-text-teal w3-container">MOM</h3>
+                    <img src="img/data/mom.png" width=400 height=300>
+                    <p> 과거와 현재의 가격을 비교해 현재 가격의 상,하 추세를 판단하는 지표</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+</body>
+
+</html>

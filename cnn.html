@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>STOCKOO - 머신러닝을 이용한 주가 예측</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+    .ng {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">주가예측_Stockoo</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="design.html">Model</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Result</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="mlp.html">MLP</a>
+                            <a class="dropdown-item" href="cnn.html">CNN</a>
+                            <a class="dropdown-item" href="rnn.html">RNN</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="ensemble.html">ENSEMBLE</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/graph.JPG')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Convolution Neural Network</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-14 col-md-16 mx-auto">
+                    <div class="ng">
+                        <h1 class="section-heading"> 설계</h1>
+                        <img class="img-fluid" src="img/cnn/CNN.PNG" width="1400" height="700">
+                        <br>
+                        <br>
+                        <hr>
+                        <h1 class="section-heading" id="select"> 기업별 선택</h1>
+                        <br>
+                        <a href="#amore">
+                            <li>아모레</li>
+                        </a>
+                        <a href="#hyundai">
+                            <li>현대</li>
+                        </a>
+                        <a href="#hyundai_heav">
+                            <li>현대 중공업</li>
+                        </a>
+                        <a href="#hyundai_mob">
+                            <li>현대자동차</li>
+                        </a>
+                        <a href="#kia_car">
+                            <li>기아자동차</li>
+                        </a>
+                        <a href="#korea_zinc">
+                            <li>고려아연</li>
+                        </a>
+                        <a href="#kt_ng">
+                            <li>케이티앤지</li>
+                        </a>
+                        <a href="#lg_hh">
+                            <li>LG 생활건강</li>
+                        </a>
+                        </a>
+                        <a href="#lg_che">
+                            <li>LG 화학</li>
+                        </a>
+                        </a>
+                        <a href="#lg_dis">
+                            <li>LG 디스플레이</li>
+                        </a>
+                        </a>
+                        <a href="#lg_elec">
+                            <li>LG 전자</li>
+                        </a>
+                        </a>
+                        <a href="#lotte_che">
+                            <li>롯데화학</li>
+                        </a>
+                        </a>
+                        <a href="#naver">
+                            <li>네이버</li>
+                        </a>
+                        </a>
+                        <a href="#posco">
+                            <li>포스코</li>
+                        </a>
+                        </a>
+                        <a href="#samsung_elec">
+                            <li>삼성전자</li>
+                        </a>
+                        </a>
+                        <a href="#samsung_fire">
+                            <li>삼성화재</li>
+                        </a>
+                        </a>
+                        <a href="#shinhan">
+                            <li>신한</li>
+                        </a>
+                        </a>
+                        <a href="#sk_hynix">
+                            <li>SK 하이닉스</li>
+                        </a>
+                        </a>
+                        <a href="#sk_tele">
+                            <li>SK 텔레콤</li>
+                        </a>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h1 class="section-heading" id="select"> 기업별 정확도 결과</h1>
+                        <img src="img/cnn/cnn_result.PNG" width=700 height=400>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="amore" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">아모레</h1>
+                            <img src="img/cnn/amore_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/amore_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/amore_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="hyundai" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">현대</h1>
+                            <img src="img/cnn/hyundai_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/hyundai_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/hyundai_3.PNG" width=500 height=300> step3
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="hyundai_heav" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">현대 중공업</h1>
+                            <img src="img/cnn/hyundai_heavy_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/hyundai_heavy_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/hyundai_heavy_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="hyundai_mob" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">현대 모비스</h1>
+                            <img src="img/cnn/hyundai_mobis_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/hyundai_mobis_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/hyundai_mobis_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="kia_car" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">기아자동차</h1>
+                            <img src="img/cnn/kia_car_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/kia_car_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/kia_car_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="korea_zinc" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">고려아연</h1>
+                            <img src="img/cnn/koera_zinc_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/koera_zinc_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/koera_zinc_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="kt_ng" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">KT&G</h1>
+                            <img src="img/cnn/KT&G_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/KT&G_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/KT&G_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="lg_hh" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">LG 생활건강</h1>
+                            <img src="img/cnn/LGH&H_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/LGH&H_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/LGH&H_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="lg_che" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">LG 화학</h1>
+                            <img src="img/cnn/lg_chemical_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/lg_chemical_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/lg_chemical_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="lg_dis" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">LG 디스플레이</h1>
+                            <img src="img/cnn/lg_display_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/lg_display_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/lg_display_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="lg_elec" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">LG 전자</h1>
+                            <img src="img/cnn/lg_electronic_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/lg_electronic_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/lg_electronic_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="lotte_che" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">롯데 화학</h1>
+                            <img src="img/cnn/lotte_chemical_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/lotte_chemical_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/lotte_chemical_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="naver" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">네이버</h1>
+                            <img src="img/cnn/naver_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/naver_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/naver_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="posco" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">포스코</h1>
+                            <img src="img/cnn/posco_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/posco_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/posco_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="samsung_elec" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">삼성전자</h1>
+                            <img src="img/cnn/samsung_electronics_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/samsung_electronics_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/samsung_electronics_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="samsung_fire" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">삼성화재</h1>
+                            <img src="img/cnn/samsung_fire_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/samsung_fire_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/samsung_fire_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="shinhan" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">신한</h1>
+                            <img src="img/cnn/shinhan_1.PNG" width=500 height=300> step1
+                            <br>
+                            <br>
+                            <img src="img/cnn/shinhan_2.PNG" width=500 height=300> step2
+                            <br>
+                            <br>
+                            <img src="img/cnn/shinhan_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="sk_hynix" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">SK 하이닉스</h1>
+                            <img src="img/cnn/sk_hynix_1.PNG" width=500 height=300> step1
+                            <br>
+                            <img src="img/cnn/sk_hynix_2.PNG" width=500 height=300> step2
+                            <br>
+                            <img src="img/cnn/sk_hynix_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div id="sk_tele" class="w3-row w3-padding-64">
+                            <h1 class="w3-text-teal w3-container">SK 텔레콤</h1>
+                            <img src="img/cnn/sk_telecom_1.PNG" width=500 height=300> step1
+                            <br>
+                            <img src="img/cnn/sk_telecom_2.PNG" width=500 height=300> step2
+                            <br>
+                            <img src="img/cnn/sk_telecom_3.PNG" width=500 height=300> step3
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>Powered by <a href="https://finance.yahoo.com/" target="_blank">yahoo finance</a></p>
+        </div>
+    </article>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+    <div class="ng" style="position: fixed; bottom: 5px; right: 5px;">
+        <a href="#select"> TOP </a>
+    </div>
+</body>
+
+</html>

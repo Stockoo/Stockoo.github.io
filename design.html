@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>STOCKOO - 머신러닝을 이용한 주가 예측</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+    .ng {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">주가예측_Stockoo</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="design.html">Model</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Result</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="mlp.html">MLP</a>
+                            <a class="dropdown-item" href="cnn.html">CNN</a>
+                            <a class="dropdown-item" href="rnn.html">RNN</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="ensemble.html">ENSEMBLE</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/graph2.PNG')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>Model Deisgn</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-14 col-md-16 mx-auto">
+                <h2 class="section-heading">Deep Learning</h2>
+                <img src="img/design/deep.png" width=700 height=500>
+                <p> 기계학습의 한 종류로 써 인공 신경망으로 사람의 학습 형태를 본 따 구현한 심층 학습방법. 
+                    <br>
+                    복잡한 비선형 관계의 데이터들을 학습해 판단 할 수 있다. Feed Forward, Back Propagation을 통해 학습한다.
+                </p>
+                <hr>                
+                <h2 class="section-heading">MLP</h2>
+                <img src="img/design/mlp.png" width=750 height=300>
+                <p> Input layer 와 output layer 사이에 하나 이상의 hidden layer가 존재하는 신경망 </p>
+                <hr>
+                <h2 class="section-heading">CNN</h2>
+                <img src="img/design/cnn.png" width=900 height=300>
+                <p> Image data를  부분으로 나누어 이에 대응하는 값을 생성, 이를 이용하여 image의 특징점을 찾는  학습 방법 </p>
+                <hr>
+                <h2 class="section-heading">RNN</h2>
+                <br>
+                <img src="img/design/rnn.png" width=900 height=300>
+                <p> hidden node가 방향을 가진 edge로 연결되어 순환구조를 이루는 인공신경망의 한 종류 </p>
+                <hr>
+                <h2 class="section-heading">ENSEMBLE</h2>
+                <img src="img/design/ensemble.PNG" width=800 height=300>
+                <p> 작은 모델들의 합으로 큰 모델을 만들어 더 보완된 결과를 내기 위한 모델. </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+</body>
+
+</html>

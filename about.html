@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>STOCKOO - 머신러닝을 이용한 주가 예측</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+    .ng {
+        font-family: 'Nanum Gothic', sans-serif;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">주가예측_Stockoo</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html">Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="design.html">Model</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Result</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="mlp.html">MLP</a>
+                            <a class="dropdown-item" href="cnn.html">CNN</a>
+                            <a class="dropdown-item" href="rnn.html">RNN</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="ensemble.html">ENSEMBLE</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/graph2.PNG')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>About Stockoo</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-14 col-md-16 mx-auto">
+                <div class="ng">
+                    <h1 class="section-heading"> 배경 및 주가 예측의 필요성 </h1>
+                    <p>컴퓨터를 통해 인터넷에서 많은 정보들을 쉽게 접할 수 있는 21세기에 빅데이터 라는 기술은 매우 매력적 이었다. 사회, 경제, 문화적 여러 영역에 걸쳐 개개인이 원하는 많은 정보를 어디서든 구할 수 있고, 구한 정보들을 이용하여 쇼핑몰에서는 소비자의 구매성향을 통해 관심사를 파악하고, 축구경기의 경향과 선수들의 컨디션 정보들을 통해 중요한 경기의 승패를 예측하는 등의 활용성을 보이고 있다. </p>
+                    <p>특히 많은 자본의 유통과 변동이 있는, 주가 예측 분야에서 빅 데이터는 머신 러닝을 통해 주가의 변동성을 파악하는데 필요해졌다. 이렇게 국내외 여러 분야에서 빅 데이터의 활용성에 관심과 필요가 늘어 감에 따라 자연스럽게 우리 팀은 이 분야에 대해 관심을 가지게 되었다. </p>
+                    <p>이러한 이유로 우리 팀은 학교의 교육과정에서 얻을 수 없는 빅 데이터와 이를 이용한 머신 러닝의 실무적인 활용 방식에 대해 알아 보고자 지원을 하게 되었다.</p>
+                    <hr>
+                    <h1 class="section-heading"> 주제 선정의 목적 </h1>
+                    <p>이번 프로젝트를 통해 실제 나와 있는 주가 데이터를 이용해 10일뒤 또는 15일뒤의 주가데이터의 상승과 하락을 예측 할 수 있는 모델을 머신 러닝의 한 종류인 딥 러닝을 이용하여 구현 시킨다. 여러 논문을 찾아보며 기존에 구현 되어 있던 ‘딥 러닝을 이용한 주가예측 모델’을 기반으로 조금 더 나은 정확도를 위해 데이터 전처리와 모델의 합성 등을 추가 하였다. </p>
+                    <p> 더 자세하게는 딥러닝(Neural net) 알고리즘인 MLP(Multi Layer Perceptron), CNN(Convolution Neural Network), RNN(Recurrent Neural Network)을 이용한 주가 예측 모델에 대해 연구한 기존논문 “ 이지훈 , 딥러닝을 이용한 주가 예측 모델 , 학위논문 , 숭실대 학교 , 2016” 을 기반으로 딥러닝 모델을 생성한다. </p>
+                    <p>그러나 이 모델들은 정확도가 50~52%로 매우 낮기 때문에 주가 데이터를 기술적 지표로 전처리 하는 부분에서 상세함을 더하고 정 확도를 높이기 위해 딥러닝 알고리즘 에 대해 연구한 후, 적용 시켜 보았다.</p>
+                    <img class="img-fluid" src="img/about/stock_data.PNG" width="900" height="200">
+                    </img>
+                    <p>출처: <a href="https://finance.yahoo.com/" target="_blank">https://finance.yahoo.com/</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+</body>
+
+</html>
